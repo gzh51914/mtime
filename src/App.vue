@@ -2,14 +2,18 @@
   <div id="app">
     <Tabbar></Tabbar>
     <router-view/>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Tabbar from './components/Tabbar'
+import Footer from './components/Footer'
+
 export default {
   components: {
-    Tabbar
+    Tabbar,
+    Footer
   }
 }
 </script>
@@ -18,7 +22,7 @@ export default {
 * {
     margin: 0;
     padding: 0;
-    font-size: .15rem;
+    // font-size: .15rem;
 }
 
 </style>

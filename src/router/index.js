@@ -1,25 +1,44 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home'
+import ArticleDetail from '@/views/ArticleDetail'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/home',
-    component: Home
+    component: Home,
+    // children: [
+    //   {
+    //     path: '/home/detail/:id',
+    //     component: Detail,
+    //     name: 'detail',
+    //     props:true
+    //   }
+    // ]
   },
   {
     path: '/theater',
-    component: ()=> import('@/views/Theater')
+    component: () => import('@/views/Theater')
   },
   {
     path: '/news',
-    component: ()=> import('@/views/News')
+    component: () => import('@/views/News')
   },
   {
     path: '/member',
-    component: ()=> import('@/views/Member')
+    component: () => import('@/views/Member')
+  },
+  {
+    name: 'articledetail',
+    path: '/articledetail/:id',
+    component: ArticleDetail,
+    props:true
+  },
+  {
+    path: '',
+    redirect: '/home'
   }
 ]
 
