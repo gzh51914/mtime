@@ -1,12 +1,17 @@
 module.exports = {
   devServer: {
+    open: true, // 默认开启浏览器
+    overlay: {
+      warnings: false,
+      errors: false
+    },
     proxy: {
-      "/Service": {
+      "/info": {
         target: "https://m.mtime.cn",
         changeOrigin: true,
-        // pathRewrite: {
-        //   "^/info": ""
-        // }
+        pathRewrite: {
+          "^/info": ""
+        }
       }
     }
   },
