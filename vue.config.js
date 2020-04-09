@@ -6,22 +6,22 @@ module.exports = {
       errors: false
     },
     proxy: {
-      "/info": {
-        target: "https://m.mtime.cn",
+      '/info': {
+        target: 'https://m.mtime.cn',
         changeOrigin: true,
         pathRewrite: {
-          "^/info": ""
+          '^/info': ''
         }
       }
     }
   },
-  lintOnSave: true, //直接关闭eslint检查
+  lintOnSave: true, // 直接关闭eslint检查
   configureWebpack: {
     resolve: {
       alias: {
-        'assets': '@/assets',
-        'con': '@/components',
-        'views': '@/views',
+        assets: '@/assets',
+        con: '@/components',
+        views: '@/views'
       }
     }
   }

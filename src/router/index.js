@@ -11,15 +11,15 @@ const routes = [
   },
   {
     path: '/theater',
-    component: ()=> import('@/views/Theater')
+    component: () => import('@/views/Theater')
   },
   {
     path: '/news',
-    component: ()=> import('@/views/News')
+    component: () => import('@/views/News')
   },
   {
     path: '/member',
-    component: ()=> import('@/views/Member')
+    component: () => import('@/views/Member')
   }
 ]
 
