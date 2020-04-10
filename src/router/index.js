@@ -10,10 +10,25 @@ import Trailer from '@/views/news/Trailer'
 
 Vue.use(VueRouter)
 
+
+
+
 const routes = [
   {
     path: '/home',
-    component: Home
+    component: Home,
+  },
+  {
+    path: '/home/hot',
+    component: ()=> import('@/views/Hot')
+  },
+  {
+    path: '/home/Coming',
+    component: ()=> import('@/views/Coming')
+  },
+  {
+    path: '/movie/:id',
+    component: ()=> import('@/views/Movie')
   },
   {
     path: '/theater',
