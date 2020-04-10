@@ -1,61 +1,60 @@
 <template>
   <div class="login">
     <div class="title">账号密码登录</div>
-    <form @submit.prevent="login">
-      <van-field v-model="username" placeholder="请输入用户名" />
-      <van-field v-model="password" type="password" placeholder="密码" />
-      <van-button round size="large" type="info">登录</van-button>
-
-      <!-- <van-field v-model="tel" type="tel" label="手机号" />
-      <van-field v-model="sms" center clearable label="短信验证码" placeholder="请输入短信验证码">
-        <template #button>
-          <van-button size="small" type="primary">发送验证码</van-button>
-        </template>
-      </van-field>-->
-    </form>
+    <van-form validate-first @submit.prevent="onFailed">
+      <van-field
+        v-model="username"
+        name="用户名"
+        label="用户名"
+        :rules="[{ required: true, message: '请填写用户名'}]"
+      />
+      <van-field
+        v-model="password"
+        type="password"
+        name="密码"
+        label="密码"
+        :rules="[{ required: true, message: '请填写密码',validator: asyncValidator}]"
+      />
+      <div style="margin: 16px;">
+        <van-button round block type="info" native-type="submit">提交</van-button>
+      </div>
+    </van-form>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import { Button, Field, Dialog } from 'vant'
+import Vue from "vue";
+import { Button, Field, Dialog, Form, Toast } from "vant";
 
-import { instance2 } from '@/utils/http'
-Vue.use(Button)
-Vue.use(Field)
-Vue.use(Dialog)
+import { instance2 } from "@/utils/http";
+Vue.use(Button);
+Vue.use(Field);
+Vue.use(Dialog);
+Vue.use(Form);
+Vue.use(Toast);
 export default {
-  data () {
+  data() {
     return {
-      username: '',
-      password: ''
-    }
+      username: "",
+      password: "",
+    };
   },
   methods: {
-    login () {
-      if (!this.username.trim() || !this.password.trim()) {
-        Dialog({
-          closeOnClickOverlay: true,
-          message: '请输入用户名或密码'
-        })
-      }
-    /*   instance2
-        .post("/api/login", {
-          username: this.username,
-          password: this.password
-        })
-        .then(res => {
-          //将token保存到本地存储里面去
-          localStorage.setItem("token", res.token);
-          //跳转到个人中心
-          this.$router.replace("/member");
-        })
-        .catch(err => {
-          Dialog({ message: err });
-        }); */
+    asyncValidator(val) {
+      return new Promise(res => {
+        Toast.loading("验证中...");
+
+        setTimeout(() => {
+          Toast.clear();
+          res(/\d{6}/.rest(val));
+        }, 1000);
+      });
+    },
+    onFailed(errorInfo) {
+      console.log("failed", errorInfo);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -65,13 +64,6 @@ export default {
     font-size: 22px;
     color: #1d2736;
     padding: 0.18rem 0;
-  }
-  .van-cell {
-    margin: 0.05rem;
-  }
-  .van-button--large {
-    width: 90%;
-    margin: 0.2rem;
   }
 }
 </style>
