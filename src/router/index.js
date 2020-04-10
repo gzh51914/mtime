@@ -2,21 +2,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home'
 import ArticleDetail from '@/views/ArticleDetail'
+import News from '@/views/News'
+import Newslist from '@/views/news/Newslist'
+import Review from '@/views/news/Review'
+import Toplist from '@/views/news/Toplist'
+import Trailer from '@/views/news/Trailer'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/home',
-    component: Home,
-    // children: [
-    //   {
-    //     path: '/home/detail/:id',
-    //     component: Detail,
-    //     name: 'detail',
-    //     props:true
-    //   }
-    // ]
+    component: Home
   },
   {
     path: '/theater',
@@ -24,7 +21,26 @@ const routes = [
   },
   {
     path: '/news',
-    component: () => import('@/views/News')
+    component: News,
+    children: [
+      {
+        path: '/news/newslist',
+        component: Newslist
+      },
+      {
+        path: '/news/review',
+        component: Review
+      },
+      {
+        path: '/news/toplist',
+        component: Toplist
+      },
+      {
+        path: '/news/trailer',
+        component: Trailer
+      },
+    ],
+    redirect: '/news/newslist'
   },
   {
     path: '/member',
@@ -34,7 +50,7 @@ const routes = [
     name: 'articledetail',
     path: '/articledetail/:id',
     component: ArticleDetail,
-    props:true
+    props: true
   },
   {
     path: '',
@@ -43,7 +59,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

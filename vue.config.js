@@ -15,6 +15,10 @@ module.exports = {
       "/utility": {
         target: "https://comm-api-m.mtime.cn",
         changeOrigin: true
+      },
+      "/discovery": {
+        target: "https://ticket-api-m.mtime.cn",
+        changeOrigin: true
       }
     }
   },
