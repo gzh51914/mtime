@@ -5,5 +5,9 @@ const instance = axios.create({
     baseURL: '/info', //基本的url
 });
 
+const instance2 = axios.create({
+    baseURL: '/theater', //基本的url
+});
 
-export default instance
+
+export {instance,instance2}

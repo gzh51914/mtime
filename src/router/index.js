@@ -28,7 +28,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
+  // 改为hash模式预防单页面刷新白屏报错 Uncaught SyntaxError: Unexpected token < 
   base: process.env.BASE_URL,
   routes
 })

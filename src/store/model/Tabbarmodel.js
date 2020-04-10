@@ -4,10 +4,10 @@ const module = {
         isTabbarShow:true,
       },
       mutations:{
-        show(state){
+        TabbarShow(state){
             state.isTabbarShow = true
         },
-        hide(state){
+        TabbarHide(state){
             state.isTabbarShow = false
         },
       },

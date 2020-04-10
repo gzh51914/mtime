@@ -7,6 +7,11 @@
         <aside>
             <div><input type="text" placeholder="请输入搜索关键词" v-model="mytext" :class="(mytext ? 'short' :'long')"><span v-show="mytext" @click="handleCancel">取消</span></div>
         </aside>
+        <div class="condition">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
         <div class="search" v-show="mytext">
             <ul v-if="searchDatalist.length">
                 <li
@@ -34,17 +39,22 @@
                 </ul>
             </div>
         </article>
+        <topButton></topButton>
     </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import instance from "@/utils/http"
+import {instance} from "@/utils/http"
 import { mapMutations } from "vuex"
+import topButton from "@/components/Topbutton"
 
 import "@/stylesheets/common.scss"
 
 export default {
+    components:{
+        topButton
+    },
     data () {
         return {
             mytext:"",
@@ -63,7 +73,8 @@ export default {
         })
     }, 
     methods:{
-        ...mapMutations("tabbar",["show","hide"]),
+        ...mapMutations("tabbar",["TabbarShow","TabbarHide"]),
+        ...mapMutations("footer",["FooterShow","FooterHide"]),
         ...mapMutations("city", ["setCityName","setCityId"]),
         handleCancel(){
             this.mytext=""
@@ -76,7 +87,7 @@ export default {
             // console.log(item);
             this.setCityName(item.n)
             this.setCityId(item.id)
-            this.$router.push("/")
+            this.$router.back()
         },
         dataFilter (cities) {
             const letterArr = []
@@ -108,10 +119,12 @@ export default {
         }
     },
     mounted() {
-        this.hide()
+        this.TabbarHide()
+        this.FooterHide()
     },
     destroyed() {
-        this.show()
+        this.FooterShow()
+        this.TabbarShow()
     },
 }
 </script>
@@ -154,14 +167,12 @@ export default {
                 input{
                     border: 1px solid #bbb;
                     padding: 7px 29px 7px 32px;
-                    
                     height: 22px;
                     font-size: 16px;
                     line-height: 1.2;
                     border-radius: 6px;
                     background: #fff url(https://static1.mtime.cn/html5/20200116143308/images/2014/search_ico_01.png) no-repeat 6px center;
-                    background-size: 1.3em 1.3em;
-                    position: relative;
+                    background-size: 20px 20px;
                     z-index: 0;
                     margin-left: 26px;
                     outline: none;
