@@ -56,6 +56,7 @@
           </span>
         </router-link>
       </ul>
+      <!-- login-out -->
       <aside class="login-out">
         <van-button round size="large" type="info" color="red" @click="handleOut">退出登录</van-button>
       </aside>
@@ -130,35 +131,32 @@ export default {
 
 <style lang="scss" scoped>
 .member {
-    background-color: pink;
     width: 100%;
     height: 100%;
     overflow: auto;
   .m-container {
     .user-msg {
       position: relative;
-      height: 170px;
+      height: 1.7rem;
       z-index: 2;
-      // margin-top: -52px;
       background: url(//static1.mtime.cn/html5/20200116143308/images/2014/set_endlogin.jpg)
         no-repeat;
       background-size: cover;
-      padding: 0 18px 0 28px;
+      padding: 0 0.18rem 0 0.28rem;
       .table_v_c {
         width: 100%;
         // height: auto;
-        padding-top: 42px;
+        padding-top: 0.42rem;
         display: flex;
-
         .i_block {
           display: inline-block;
           vertical-align: middle;
         }
         .i_set_face {
-          border-radius: 120px;
+          border-radius: 1.2rem;
           overflow: hidden;
-          width: 66px;
-          height: 66px;
+          width: 0.66rem;
+          height: 0.66rem;
           background: url(//static1.mtime.cn/html5/20200116143308/images/2014/set_face.png)
             no-repeat;
           background-size: cover;
@@ -172,45 +170,48 @@ export default {
           height: 100px;
           display: block; 
           color: #fff;
-          margin-left: 18px;
-          //   box-sizing: border-box;
+          margin-left: 0.18rem;
           dt {
-            margin: 7px 0 0;
+            margin: 0.07rem 0 0;
             .i_grade {
               display: inline-block;
               vertical-align: middle;
               overflow: hidden;
-              font-size: 14px;
+              font-size: 0.14rem;
               color: #fff;
-              width: 30px;
-              height: 18px;
-              line-height: 18px;
+              width: 0.3rem;
+              height: 0.18rem;
+              line-height: 0.18rem;
               text-align: center;
               background: url(//static1.mtime.cn/html5/20200116143308/images/2014/vip_grade.png)
                 no-repeat 0 0;
-              background-size: auto 18px;
+              background-size: auto 0.18rem;
               font-style: normal;
             }
             > b {
-              font-size: 18px;
+              font-size: 0.18rem;
               display: inline-block;
               vertical-align: middle;
               font-weight: normal;
             }
           }
           dd {
+            padding-top: 0.02rem;
             display: block;
             > b {
-              font-size: 14px;
+              font-size: 0.14rem;
             }
           }
         }
       }
     }
     .my_shoptool {
-      padding: 0 20px 0;
-      background: #fff;
+      width: 100%;
+      // height: 400px;
+      padding: 0 0.2rem 0;
+      // background: yellowgreen;
       position: relative;
+      box-sizing: border-box;
       // margin-bottom: 6px;
       ul {
         display: flex;
@@ -219,17 +220,57 @@ export default {
           flex: 1;
           text-align: center;
           a {
-            .i_cate {
+            display: block;
+            padding: 0.18rem 0 0.14rem;
+            .i_cat {
               background: #ffb059
                 url(//static1.mtime.cn/html5/20200116143308/images/2014/i_cate.png)
                 no-repeat center center;
-              background-size: auto 54px;
-              width: 54px;
-              height: 54px;
-              border-radius: 60px;
+              background-size: auto 0.54rem;
+              width: 0.54rem;
+              height: 0.54rem;
+              border-radius: 0.6rem;
               display: inline-block;
               vertical-align: middle;
               overflow: hidden;
+              p {
+                font-size: 0.14rem;
+              }
+            }
+            .i_movie {
+              background: #78bdfd
+                url(//static1.mtime.cn/html5/20200116143308/images/2014/i_movie.png)
+                no-repeat center center;
+              background-size: auto 0.28rem;
+              width: 0.54rem;
+              height: 0.54rem;
+              border-radius: 0.6rem;
+              display: inline-block;
+              vertical-align: middle;
+              overflow: hidden;
+              p {
+                font-size: 0.14rem;
+              }
+            }
+            .i_shop {
+              background: #ff815a
+                url(//static1.mtime.cn/html5/20200116143308/images/2014/i_shop.png)
+                no-repeat center center;
+              background-size: auto 28px;
+              width: 0.54rem;
+              height: 0.54rem;
+              border-radius: 0.6rem;
+              display: inline-block;
+              vertical-align: middle;
+              overflow: hidden;
+              p {
+                font-size: 0.14rem;
+              }
+            }
+            p {
+              padding: 0.1rem 0;
+              font-size: 0.14rem;
+              color: #777;
             }
           }
         }
@@ -240,7 +281,7 @@ export default {
       background: #fff;
       padding: 0 0 0 16px;
       box-shadow: 1px 1px 4px rgba(51, 51, 51, 0.1);
-      margin-bottom: 20pxm;
+      margin-bottom: 20px;
       li {
         padding: 12px 14px 12px 0;
         position: relative;
@@ -258,7 +299,7 @@ export default {
       }
     }
     .login-out {
-      padding-bottom: 20px;
+      padding: 20px 0;
     }
   }
 }
