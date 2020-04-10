@@ -1,12 +1,12 @@
 module.exports = {
   devServer: {
     proxy: {
-      "/Service": {
+      "/info": {
         target: "https://m.mtime.cn",
         changeOrigin: true,
-        // pathRewrite: {
-        //   "^/info": ""
-        // }
+        pathRewrite: {
+          "^/info": ""
+        }
       }
     }
   },
