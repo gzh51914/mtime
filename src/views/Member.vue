@@ -65,78 +65,77 @@
 </template>
 
 <script>
-import Vue from "vue";
-import { Icon, Button, Dialog } from "vant";
-Vue.use(Icon);
-Vue.use(Button);
-Vue.use(Dialog);
+import Vue from 'vue'
+import { Icon, Button, Dialog } from 'vant'
+Vue.use(Icon)
+Vue.use(Button)
+Vue.use(Dialog)
 
 export default {
   // 路由守卫
-  //   beforeRouteEnter(to, from, next) {
-  //     if (localStorage.getItem("token")) {
-  //       next();
-  //     } else {
-  //       next("/login");
-  //     }
-  //   }
-  data() {
+  beforeRouteEnter (to, from, next) {
+    if (sessionStorage.getItem('token')) {
+      next()
+    } else {
+      next('/login')
+    }
+  },
+  data () {
     return {
       menuList: [
         {
           id: 1,
-          name: "电影票优惠券",
-          icon: { before: "paid", after: "arrow" }
+          name: '电影票优惠券',
+          icon: { before: 'paid', after: 'arrow' }
         },
         {
           id: 2,
-          name: "商品优惠券",
-          icon: { before: "idcard", after: "arrow" }
+          name: '商品优惠券',
+          icon: { before: 'idcard', after: 'arrow' }
         },
         {
           id: 3,
-          name: "我的活动",
-          icon: { before: "volume-o", after: "arrow" }
+          name: '我的活动',
+          icon: { before: 'volume-o', after: 'arrow' }
         },
         {
           id: 4,
-          name: "我的电影",
-          icon: { before: "video-o", after: "arrow" }
+          name: '我的电影',
+          icon: { before: 'video-o', after: 'arrow' }
         },
-        { id: 5, name: "我的收藏", icon: { before: "like-o", after: "arrow" } },
-        { id: 6, name: "意见反馈", icon: { after: "arrow" } },
+        { id: 5, name: '我的收藏', icon: { before: 'like-o', after: 'arrow' } },
+        { id: 6, name: '意见反馈', icon: { after: 'arrow' } },
         {
           id: 7,
-          name: "商城使用帮助",
-          icon: { after: "arrow" }
+          name: '商城使用帮助',
+          icon: { after: 'arrow' }
         },
         {
           id: 8,
-          name: "购买使用帮助",
-          icon: { after: "arrow" }
+          name: '购买使用帮助',
+          icon: { after: 'arrow' }
         }
       ]
-    };
+    }
   },
   methods: {
-    handleOut() {
+    handleOut () {
       Dialog.confirm({
-        title: "警告",
-        message: "确定要退出吗"
+        title: '警告',
+        message: '确定要退出吗'
       })
         .then(() => {
           // 确定退出
           window.sessionStorage.clear()
-          this.$router.push("/login")
+          this.$router.push('/login')
         })
         .catch(() => {
           // 取消退出
-          console.log("out ...");
-          
-        });
+          console.log('out ...')
+        })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

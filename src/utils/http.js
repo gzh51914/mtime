@@ -5,27 +5,35 @@ const instance = axios.create({
   baseURL: '/info' // 基本的url
 })
 
-// 针对于上线的 http://47.96.0.211:3000
+// instance2 是本地测试接口
 const instance2 = axios.create({
-  baseURL: '/ask'
+  baseURL: 'http://127.0.0.1:8888/api/private/v1'
 })
 
 // 请求之前的拦截操作 看token是否存在
 instance2.interceptors.request.use(
   config => {
-    if (localStorage.getItem('token')) {
-      config.headers.token = localStorage.getItem('token')
+    if (sessionStorage.getItem('token')) {
+      config.headers.token = sessionStorage.getItem('token')
     }
+    console.log('这里是请求之前拦截...')
+
     return config
   }
 )
 
 // 响应之后的拦截操作 通过状态码判断
 instance2.interceptors.response.use(res => {
-  if (res.data.err === 0) {
-    return res.data
+  console.log('这里是响应之后拦截...')
+  console.log(res.data.meta.msg)
+
+  if (res.data !== null) {
+    console.log(666)
+
+    return res
   } else {
-    return Promise.reject(res.data.msg)
+    console.log('reject', res)
+    return Promise.reject(res.data.meta.msg)
   }
 })
 
