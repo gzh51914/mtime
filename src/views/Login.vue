@@ -17,27 +17,27 @@
 </template>
 
 <script>
-import Vue from "vue";
-import { Button, Field, Dialog } from "vant";
-Vue.use(Button);
-Vue.use(Field);
-Vue.use(Dialog);
+import Vue from 'vue'
+import { Button, Field, Dialog } from 'vant'
 
-import { instance2 } from "@/utils/http";
+import { instance2 } from '@/utils/http'
+Vue.use(Button)
+Vue.use(Field)
+Vue.use(Dialog)
 export default {
-  data() {
+  data () {
     return {
-      username: "",
-      password: ""
-    };
+      username: '',
+      password: ''
+    }
   },
   methods: {
-    login() {
+    login () {
       if (!this.username.trim() || !this.password.trim()) {
-        Dialog({ 
-            closeOnClickOverlay:true,
-            message: "请输入用户名或密码" });
-        return;
+        Dialog({
+          closeOnClickOverlay: true,
+          message: '请输入用户名或密码'
+        })
       }
     /*   instance2
         .post("/api/login", {
@@ -55,10 +55,10 @@ export default {
         }); */
     }
   }
-};
+}
 </script>
 
-<style lang="scss",scoped>
+<style lang="scss" scoped>
 .login {
   .title {
     text-align: center;

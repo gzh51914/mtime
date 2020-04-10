@@ -32,35 +32,35 @@
 
 <script>
 import axios from 'axios'
-import Vue from "vue"
-import moment from "moment"
+import Vue from 'vue'
+import moment from 'moment'
 
-Vue.filter('dataFilter',data => {
-    return moment(data*1000).format('YYYY-MM-DD HH:mm')
+Vue.filter('dataFilter', data => {
+  return moment(data * 1000).format('YYYY-MM-DD HH:mm')
 })
 export default {
-    data () {
-        return {
-            infolist: null,
-            imginfo: null
-        }
-    },
-    created () {
-        axios.post('/article/originalInfoList.api').then(res => {
-            this.infolist = res.data.data.list
-            // console.log(res.data.data.list[0].images[0].imgUrl);
-        })
-    },
-    methods: {
-        selectclass:function(data){
-            if(data === 1) return 'typeone'
-            else if(data === 2) return 'typesecond'
-            else return 'typethird'
-        },
-        toDetail:function(id){
-            this.$router.push(`/articledetail/${id}`)
-        }
+  data () {
+    return {
+      infolist: null,
+      imginfo: null
     }
+  },
+  created () {
+    axios.post('/article/originalInfoList.api').then(res => {
+      this.infolist = res.data.data.list
+      // console.log(res.data.data.list[0].images[0].imgUrl);
+    })
+  },
+  methods: {
+    selectclass: function (data) {
+      if (data === 1) return 'typeone'
+      else if (data === 2) return 'typesecond'
+      else return 'typethird'
+    },
+    toDetail: function (id) {
+      this.$router.push(`/articledetail/${id}`)
+    }
+  }
 }
 </script>
 
@@ -107,7 +107,7 @@ export default {
                         width: 1.86rem;
                         height: .22rem;
                         margin-top: .2rem;
-                    } 
+                    }
                 }
             }
             .typesecond {
@@ -138,7 +138,7 @@ export default {
                         width: 1.86rem;
                         height: .22rem;
                         // margin-top: .2rem;
-                    } 
+                    }
                 }
             }
             .typethird {
@@ -170,7 +170,7 @@ export default {
                         width: 1.86rem;
                         height: .22rem;
                         // margin-top: .2rem;
-                    } 
+                    }
                 }
             }
         }

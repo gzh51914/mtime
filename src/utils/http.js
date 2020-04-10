@@ -13,8 +13,8 @@ const instance2 = axios.create({
 // 请求之前的拦截操作 看token是否存在
 instance2.interceptors.request.use(
   config => {
-    if (localStorage.getItem("token")) {
-      config.headers.token = localStorage.getItem("token")
+    if (localStorage.getItem('token')) {
+      config.headers.token = localStorage.getItem('token')
     }
     return config
   }
@@ -22,7 +22,7 @@ instance2.interceptors.request.use(
 
 // 响应之后的拦截操作 通过状态码判断
 instance2.interceptors.response.use(res => {
-  if (res.data.err === 0) { 
+  if (res.data.err === 0) {
     return res.data
   } else {
     return Promise.reject(res.data.msg)
@@ -30,4 +30,3 @@ instance2.interceptors.response.use(res => {
 })
 
 export { instance, instance2 }
-

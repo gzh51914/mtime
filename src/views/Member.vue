@@ -9,7 +9,7 @@
             <img
               class="m_img"
               src="//imgproxy.mtime.cn/get.ashx?uri=http%3A%2F%2Fimg2.mtime.cn%2Fimages%2Fdefault%2Fhead.gif&amp;width=100&amp;height=100&amp;clipType=4"
-              alt="勤恳的朱家欣"
+              alt="你打篮球很像蔡徐坤"
             />
           </i>
           <dl>
@@ -57,19 +57,18 @@
         </router-link>
       </ul>
       <aside class="login-out">
-        <van-button round size="large" type="info" color="orange" @click="handleOut">退出登录</van-button>
+        <van-button round size="large" type="info" color="red" @click="handleOut">退出登录</van-button>
       </aside>
     </section>
   </div>
-  <!-- 这里插入底部组件 -->
 </template>
 
 <script>
-import Vue from "vue";
-import { Icon, Button, Dialog } from "vant";
-Vue.use(Icon);
-Vue.use(Button);
-Vue.use(Dialog);
+import Vue from 'vue'
+import { Icon, Button, Dialog } from 'vant'
+Vue.use(Icon)
+Vue.use(Button)
+Vue.use(Dialog)
 
 export default {
   // 路由守卫
@@ -80,72 +79,74 @@ export default {
   //       next("/login");
   //     }
   //   }
-
-  data() {
+  data () {
     return {
       menuList: [
         {
           id: 1,
-          name: "电影票优惠券",
-          icon: { before: "paid", after: "arrow" }
+          name: '电影票优惠券',
+          icon: { before: 'paid', after: 'arrow' }
         },
         {
           id: 2,
-          name: "商品优惠券",
-          icon: { before: "idcard", after: "arrow" }
+          name: '商品优惠券',
+          icon: { before: 'idcard', after: 'arrow' }
         },
         {
           id: 3,
-          name: "我的活动",
-          icon: { before: "volume-o", after: "arrow" }
+          name: '我的活动',
+          icon: { before: 'volume-o', after: 'arrow' }
         },
         {
           id: 4,
-          name: "我的电影",
-          icon: { before: "video-o", after: "arrow" }
+          name: '我的电影',
+          icon: { before: 'video-o', after: 'arrow' }
         },
-        { id: 5, name: "我的收藏", icon: { before: "like-o", after: "arrow" } },
-        { id: 6, name: "意见反馈", icon: { after: "arrow" } },
+        { id: 5, name: '我的收藏', icon: { before: 'like-o', after: 'arrow' } },
+        { id: 6, name: '意见反馈', icon: { after: 'arrow' } },
         {
           id: 7,
-          name: "商城使用帮助",
-          icon: { after: "arrow" }
+          name: '商城使用帮助',
+          icon: { after: 'arrow' }
         },
         {
           id: 8,
-          name: "购买使用帮助",
-          icon: { after: "arrow" }
+          name: '购买使用帮助',
+          icon: { after: 'arrow' }
         }
       ]
-    };
+    }
   },
   methods: {
-    handleOut() {
+    handleOut () {
       Dialog.confirm({
-        title: "警告",
-        message: "确定要退出吗"
-      });
+        title: '警告',
+        message: '确定要退出吗'
+      })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .member {
-  //   background-color: pink;
+    background-color: pink;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
   .m-container {
     .user-msg {
       position: relative;
       height: 170px;
       z-index: 2;
-      margin-top: -52px;
+      // margin-top: -52px;
       background: url(//static1.mtime.cn/html5/20200116143308/images/2014/set_endlogin.jpg)
         no-repeat;
       background-size: cover;
       padding: 0 18px 0 28px;
       .table_v_c {
         width: 100%;
-        height: auto;
+        // height: auto;
         padding-top: 42px;
         display: flex;
 
@@ -168,11 +169,8 @@ export default {
           }
         }
         dl {
-          display: block;
-          margin-block-start: 12px;
-          margin-block-end: 12px;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
+          height: 100px;
+          display: block; 
           color: #fff;
           margin-left: 18px;
           //   box-sizing: border-box;
@@ -202,7 +200,6 @@ export default {
           }
           dd {
             display: block;
-            margin-inline-start: 40px;
             > b {
               font-size: 14px;
             }
@@ -211,10 +208,10 @@ export default {
       }
     }
     .my_shoptool {
-      padding: 0 18px 0;
+      padding: 0 20px 0;
       background: #fff;
       position: relative;
-      margin-bottom: 6px;
+      // margin-bottom: 6px;
       ul {
         display: flex;
         justify-content: center;
@@ -259,6 +256,9 @@ export default {
           right: 14px;
         }
       }
+    }
+    .login-out {
+      padding-bottom: 20px;
     }
   }
 }
