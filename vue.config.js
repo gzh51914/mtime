@@ -12,6 +12,14 @@ module.exports = {
         pathRewrite: {
           '^/info': ''
         }
+      },
+      "/article": {
+        target: "https://content-api-m.mtime.cn",
+        changeOrigin: true
+      },
+      "/utility": {
+        target: "https://comm-api-m.mtime.cn",
+        changeOrigin: true
       }
     }
   },
