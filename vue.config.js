@@ -22,7 +22,7 @@ module.exports = {
         changeOrigin: true
       },
       '/req': {
-        target: 'http://47.104.227.24:3000',
+        target: 'http://47.104.227.24:3000/api',
         changeOrigin: true,
         pathRewrite: {
           '^/req': ''

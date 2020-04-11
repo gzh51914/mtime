@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+  <Loading v-if="isLoading"/>
     <!-- 登录 -->
     <div class="login" v-show="isShow">
       <div class="title">账号密码登录</div>
@@ -76,7 +77,6 @@
 <script>
 import Vue from "vue";
 import { Button, Field, Dialog, Form, Toast } from "vant";
-
 import { instance2 } from "@/utils/http";
 Vue.use(Button);
 Vue.use(Field);
@@ -88,7 +88,8 @@ export default {
     return {
       username: "",
       password: "",
-      isShow: true
+      isShow: true,
+      isLoading: true
     };
   },
   methods: {
@@ -119,14 +120,14 @@ export default {
         });
       } else {
         instance2
-          .post("/api/login", {
+          .post("/login", {
             username: this.username,
             password: this.password
           })
           .then(res => {
             // console.log("then", res.data.token);
             sessionStorage.setItem("token", res.data.token);
-            console.log("为给我跳...");
+            // console.log("为给我跳...");
             this.$router.replace("/member");
             // this.isShow = !this.isShow
           })
@@ -145,7 +146,7 @@ export default {
         });
       } else {
         instance2
-          .post("/api/reg", {
+          .post("/reg", {
             username: this.username,
             password: this.password
           })
@@ -161,6 +162,12 @@ export default {
           });
       }
     }
+  },
+  mounted () {
+    // loading
+    setTimeout(()=>{
+    this.isLoading = false
+    },1000)
   }
 };
 </script>

@@ -13,8 +13,9 @@ import Footer from './components/Footer'
 export default {
   components: {
     Tabbar,
-    Footer
-  }
+    Footer,
+  },
+  
 }
 </script>
 
