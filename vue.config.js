@@ -1,11 +1,11 @@
 module.exports = {
   devServer: {
     proxy: {
-      "/api": {
+      "/info": {
         target: "https://m.mtime.cn",
         changeOrigin: true,
         pathRewrite: {
-          "^/api": ""
+          "^/info": ""
         }
       }
     }

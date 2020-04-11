@@ -25,6 +25,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+    *{
+        font-size: .17rem;
+    }
     .header{
         height: 0.51rem;
         background: #1C2635;

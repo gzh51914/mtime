@@ -21,6 +21,7 @@ const routes = [
     component: ()=> import('@/views/Coming')
   },
   {
+    name: 'movie',
     path: '/movie/:id',
     component: ()=> import('@/views/Movie')
   },

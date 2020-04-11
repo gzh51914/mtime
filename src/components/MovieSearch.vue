@@ -15,6 +15,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    *{
+        font-size: .17rem;
+    }
     .search{
         background: #f6f6f6;
         height: .6rem;
