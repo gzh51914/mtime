@@ -46,6 +46,7 @@ export default {
     },
     created () {
         axios.get('/info/Service/callback.mi/PageSubArea/GetRecommendationIndexInfo.api?t=20204101246412756').then(res => {
+            localStorage.setItem('newsinfo', JSON.stringify(res.data))
             this.imgUrl = res.data.news.imageUrl
             this.imgTitle = res.data.news.title
         })

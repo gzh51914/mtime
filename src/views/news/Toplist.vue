@@ -43,9 +43,7 @@ export default {
         }
     },
     created () {
-        axios.get('/info/Service/callback.mi/PageSubArea/GetRecommendationIndexInfo.api?t=20204101832992539').then(res => {
-            this.topList = res.data.topList
-        })
+        this.topList = JSON.parse(localStorage.getItem('newsinfo')).topList
         axios.get('/info/Service/callback.mi/TopList/TopListOfAll.api?t=20204101832964920&pageIndex=1').then(res => {
             this.topLists = res.data.topLists
         })

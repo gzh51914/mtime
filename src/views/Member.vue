@@ -48,7 +48,7 @@
       </aside>
       <!-- menuList -->
       <ul class="menuList">
-        <router-link v-for="data in menuList" :key="data.id" tag="li" to="/login">
+        <router-link v-for="data in menuList" :key="data.id" tag="li" to="/member">
           <van-icon :name="data.icon.before " size="20" class="icon-css" />
           {{data.name}}
           <span>

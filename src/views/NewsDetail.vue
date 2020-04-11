@@ -23,7 +23,12 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-    h1 {
-        font-size: .18rem;
+    * {
+        font-size: .15rem;
     }
+    img {
+        width: 3.4rem;
+        height: 4.97rem;
+    }
+
 </style>

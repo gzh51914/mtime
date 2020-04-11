@@ -45,13 +45,13 @@ export default {
   },
   methods: {
     asyncValidator (val) {
-      console.log(val)
-      return new Promise(res => {
+      // console.log(val)
+      return new Promise(resolve => {
         Toast.loading('验证中...')
 
         setTimeout(() => {
           Toast.clear()
-          // res(/\d{6}/.rest(val));
+          // resolve(/\d{6}/.rest(val));
         }, 1000)
       })
     },
