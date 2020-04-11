@@ -27,7 +27,7 @@
         </p>
         <p class="p2">
             <span>Copyright</span>
-            <span class="copytime">2006-2020</span> 
+            <span class="copytime">2006-2020</span>
             <span> Mtime.com Inc. All rights reserved.</span>
         </p>
     </footer>
@@ -35,22 +35,22 @@
 
 <script>
 export default {
-    data () {
-        return {
-            foodata: [
-                { id: 1, title: '首页', path: '/home' },
-                { id: 2, title: '购票', path: '/theater' },
-                { id: 3, title: '发现', path: '/news' },
-                { id: 4, title: '我的', path: '/member' }
-            ],
-            infodata: [
-                { id: 1, title: 'PC版', path: '/home' },
-                { id: 2, title: '客户端下载', path: '/theater'},
-                { id: 3, title: '意见反馈', path: '/news' },
-                { id: 4, title: '帮助中心', path: '/member' }
-            ]
-        }
+  data () {
+    return {
+      foodata: [
+        { id: 1, title: '首页', path: '/home' },
+        { id: 2, title: '购票', path: '/theater' },
+        { id: 3, title: '发现', path: '/news' },
+        { id: 4, title: '我的', path: '/member' }
+      ],
+      infodata: [
+        { id: 1, title: 'PC版', path: '/home' },
+        { id: 2, title: '客户端下载', path: '/theater' },
+        { id: 3, title: '意见反馈', path: '/news' },
+        { id: 4, title: '帮助中心', path: '/member' }
+      ]
     }
+  }
 }
 </script>
 

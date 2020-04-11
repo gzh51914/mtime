@@ -16,16 +16,16 @@
 
 <script>
 export default {
-    data () {
-        return {
-            navdata: [
-                { id: 1, title: '首页', path: '/home' },
-                { id: 2, title: '购票', path: '/theater' },
-                { id: 3, title: '发现', path: '/news' },
-                { id: 4, title: '我的', path: '/member' }
-            ]
-        }
+  data () {
+    return {
+      navdata: [
+        { id: 1, title: '首页', path: '/home' },
+        { id: 2, title: '购票', path: '/theater' },
+        { id: 3, title: '发现', path: '/news' },
+        { id: 4, title: '我的', path: '/member' }
+      ]
     }
+  }
 }
 </script>
 

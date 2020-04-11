@@ -60,6 +60,10 @@ const routes = [
     component: () => import('@/views/Member')
   },
   {
+    path: '/login',
+    component: () => import('@/views/Login')
+  },
+  {
     name: 'articledetail',
     path: '/articledetail/:id',
     component: ArticleDetail,
