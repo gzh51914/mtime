@@ -16,7 +16,7 @@ export default {
         MovieTab,
         MovieSearch,
         MovieList,
-        Footer
+        Footer,
     }
     
 }
