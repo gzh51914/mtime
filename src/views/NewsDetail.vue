@@ -13,9 +13,9 @@ export default {
         }
     },
     created () {
-        console.log(this.$route.params.id);
+        // console.log(this.$route.params.id);
         axios.get(`/news/detail.api?newsId=${this.$route.params.id}&t=20204111365668077`).then(res => {
-            console.log(res.data.data.content);
+            // console.log(res.data.data.content);
             this.content = res.data.data.content
         })
     }

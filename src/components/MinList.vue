@@ -57,7 +57,7 @@ export default {
     },
     computed: {
         ...mapState("city", ["cityName","cityId"]),
-    },
+    }
 }
 </script>
 
@@ -97,7 +97,7 @@ export default {
             ul{
                 width: 3.3rem;
                 height: 3.2rem;
-                overflow-x: hidden;
+                overflow: hidden;
                 li{
                     list-style-type: none;
                     float: left;

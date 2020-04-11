@@ -3,6 +3,7 @@ import axios from "axios"
 //这个instance是针对于时光网的接口
 const instance = axios.create({
     baseURL: '/info', //基本的url
+    // 
 });
 
 const instanceTheater = axios.create({
@@ -31,14 +32,11 @@ instance2.interceptors.request.use(config => {
 // 响应之后的拦截操作 通过状态码判断
 instance2.interceptors.response.use(res => {
   // console.log('这里是响应之后拦截...')
-  // console.log(res)
-
-  if (res.status === 200) {
-    // console.log("登录成功...")
-
+  if (res.data.err === 0) {
+    // console.log("登录成功...",res)
     return res
   } else {
-    console.log('reject', res)
+    // console.log('reject', res)
     return Promise.reject(res.data.msg)
   }
 })

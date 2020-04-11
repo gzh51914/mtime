@@ -56,7 +56,8 @@ export default {
         li{
             padding: .17rem 0 .1rem 0;
             box-sizing: border-box;
-            height: 1.47rem;
+            // height: 1.47rem;
+            height: auto;
             border-bottom: 1px solid #d8d8d8;
             list-style-type: none;
             .movie{

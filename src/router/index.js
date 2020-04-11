@@ -15,18 +15,20 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '',
+    redirect: '/home'
+  },
+  {
     path: '/home',
-    component: Home,
-    children: [
-      {
-        path: '/home/hot',
-        component: Hot,
-      },
-      {
-        path: '/home/coming',
-        component: Coming,
-      }
-    ]
+    component: Home
+  },
+  {
+    path: '/home/hot',
+    component: Hot,
+  },
+  {
+    path: '/home/coming',
+    component: Coming,
   },
   {
     name: 'movie',
@@ -81,8 +83,10 @@ const routes = [
     props: true
   },
   {
-    path: '',
-    redirect: '/home'
+    name:"theaterDetail",
+    path: '/theater/detail/:id',
+    component: ()=> import('@/views/TheaterDetail'),
+    props:true,
   },
   {
     path: '/theater',

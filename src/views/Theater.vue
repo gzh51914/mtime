@@ -40,7 +40,7 @@
 
 <script>
 import Vue from 'vue'
-import {instance,instance2,instanceTheater} from "@/utils/http"
+import {instanceTheater} from "@/utils/http"
 import {mapState,mapActions,mapMutations} from "vuex"
 import "@/stylesheets/common.scss"
 import topButton from "@/components/Topbutton"
@@ -80,6 +80,7 @@ export default {
             // console.log(item);
             this.setCinemaName(item.cinameName)
             this.setCinemaId(item.cinemaId)
+            this.$router.push('/theater/detail/'+ item.cinemaId)
         },
         handleChangepage(path){
             this.$router.push(path)

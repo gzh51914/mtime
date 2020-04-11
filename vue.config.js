@@ -53,7 +53,14 @@ module.exports = {
         pathRewrite: {
           '^/req': ''
         }
-      }
+      },
+      "/tDetail": { // 影院详情页的url
+        target: "https://ticket-api-m.mtime.cn",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/tDetail": ""
+        }
+      },
     }
   },
   lintOnSave: true, // 直接关闭eslint检查
