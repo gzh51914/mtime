@@ -10,6 +10,12 @@ const routes = [
     component: Home
   },
   {
+    name:"theaterDetail",
+    path: '/theater/detail/:id',
+    component: ()=> import('@/views/TheaterDetail'),
+    props:true,
+  },
+  {
     path: '/theater',
     component: ()=> import('@/views/Theater')
   },

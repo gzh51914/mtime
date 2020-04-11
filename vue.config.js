@@ -8,11 +8,18 @@ module.exports = {
           "^/info": ""
         }
       },
-      "/theater": {
+      "/theater": { // 影院的url
         target: "https://ticket-m.mtime.cn",
         changeOrigin: true,
         pathRewrite: {
           "^/theater": ""
+        }
+      },
+      "/tDetail": { // 影院详情页的url
+        target: "https://ticket-api-m.mtime.cn",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/tDetail": ""
         }
       },
     }

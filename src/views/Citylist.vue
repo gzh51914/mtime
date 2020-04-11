@@ -65,7 +65,7 @@ export default {
         }
     },
     created () {
-        instance("/Service/callback.mi/Showtime/HotCitiesByCinema.api?t=202048225470270").then(res => {
+        instance.get("/Service/callback.mi/Showtime/HotCitiesByCinema.api?t=202048225470270").then(res => {
             // console.log((res.data.p).slice(0,9))
             this.searchList = res.data.p
             this.dataFilter(res.data.p)

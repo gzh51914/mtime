@@ -23,7 +23,7 @@ let store = new Vuex.Store({
     tabbar,//tabbar的模块
     city,
     footer,
-    cinema,
+    cinema,//影院
   }
 })
 
