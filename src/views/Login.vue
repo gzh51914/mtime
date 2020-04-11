@@ -45,13 +45,13 @@ export default {
   },
   methods: {
     asyncValidator (val) {
-      console.log(val)
-      return new Promise(res => {
+      // console.log(val)
+      return new Promise(resolve => {
         Toast.loading('验证中...')
 
         setTimeout(() => {
           Toast.clear()
-          // res(/\d{6}/.rest(val));
+          // resolve(/\d{6}/.rest(val));
         }, 1000)
       })
     },
@@ -67,19 +67,19 @@ export default {
         })
       } else {
         instance2
-          .post('/login', {
+          .post('/api/login', {
             username: this.username,
             password: this.password
           })
           .then(res => {
-            console.log('then', res.data.data.token)
-            sessionStorage.setItem('token', res.data.data.token)
-            console.log('为给我跳...')
+            // console.log('then', res.data.token)
+            sessionStorage.setItem('token', res.data.token)
+            // console.log('为给我跳...')
             this.$router.replace('/member')
           })
           .catch(err => {
-            Dialog({ message: '用户名或密码错误', closeOnClickOverlay: true })
-            console.log('catch', err)
+            Dialog({ message: res.data.msg, closeOnClickOverlay: true })
+            // console.log('catch', err)
           })
       }
     }
