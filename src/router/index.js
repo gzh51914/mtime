@@ -8,6 +8,8 @@ import Newslist from '@/views/news/Newslist'
 import Review from '@/views/news/Review'
 import Toplist from '@/views/news/Toplist'
 import Trailer from '@/views/news/Trailer'
+import Hot from '@/views/Hot'
+import Coming from '@/views/Coming'
 
 Vue.use(VueRouter)
 
@@ -15,16 +17,19 @@ const routes = [
   {
     path: '/home',
     component: Home,
+    children: [
+      {
+        path: '/home/hot',
+        component: Hot,
+      },
+      {
+        path: '/home/coming',
+        component: Coming,
+      }
+    ]
   },
   {
-    path: '/home/hot',
-    component: ()=> import('@/views/Hot')
-  },
-  {
-    path: '/home/Coming',
-    component: ()=> import('@/views/Coming')
-  },
-  {
+    name: 'movie',
     path: '/movie/:id',
     component: ()=> import('@/views/Movie')
   },

@@ -1,23 +1,33 @@
 <template>
-    <div class="Hot">
+    <div class="hot">
         <MovieTab></MovieTab>
         <MovieSearch></MovieSearch>
         <MovieList></MovieList>
+        <Footer></Footer>
     </div>
 </template>
 <script>
 import MovieTab from '@/components/MovieTab'
 import MovieSearch from '@/components/MovieSearch'
 import MovieList from '@/components/MovieList'
+import Footer from '@/components/Footer'
 export default {
     components: {
         MovieTab,
         MovieSearch,
-        MovieList
+        MovieList,
+        Footer,
+    },
+    created () {
+        // console.log(this.$route);
     }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    Footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
 </style>

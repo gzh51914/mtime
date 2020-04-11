@@ -5,6 +5,15 @@ const instance = axios.create({
     baseURL: '/info', //基本的url
 });
 
+const instanceTheater = axios.create({
+  baseURL: '/theater', //影院的url
+});
+
+const instanceTDetail = axios.create({
+  baseURL: '/tDetail', //影院详情页的url
+});
+
+// instance2 是本地测试接口
 const instance2 = axios.create({
   baseURL: '/req'
 })
@@ -34,4 +43,4 @@ instance2.interceptors.response.use(res => {
   }
 })
 
-export { instance, instance2 }
+export { instance, instance2 , instanceTheater, instanceTDetail}

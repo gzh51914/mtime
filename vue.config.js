@@ -36,6 +36,17 @@ module.exports = {
           "^/theater": ""
         }
       },
+      "/toDetail": {
+        target: "https://ticket-api-m.mtime.cn",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/toDetail": ""
+        }
+      },
+      "/api": {
+        target: "https://ticket-m.mtime.cn",
+        changeOrigin: true
+      },
       '/req': {
         target: 'http://47.104.227.24:3000',
         changeOrigin: true,

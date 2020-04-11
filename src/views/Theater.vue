@@ -40,7 +40,7 @@
 
 <script>
 import Vue from 'vue'
-import {instance,instance2} from "@/utils/http"
+import {instance,instance2,instanceTheater} from "@/utils/http"
 import {mapState,mapActions,mapMutations} from "vuex"
 import "@/stylesheets/common.scss"
 import topButton from "@/components/Topbutton"
@@ -63,7 +63,7 @@ export default {
         }
     },
     created() {
-        instance2.get(`/api/proxy/ticket/onlineCinemasByCity.api?locationId=${this.cityId}&_=1586499843760`).then(res=>{
+        instanceTheater.get(`/api/proxy/ticket/onlineCinemasByCity.api?locationId=${this.cityId}&_=1586499843760`).then(res=>{
             // console.log(res.data.data);
             this.noticeNotOwn = res.data.data.noticeNotOwn
             this.cinemaList = res.data.data.cinemaList

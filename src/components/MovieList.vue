@@ -32,7 +32,7 @@ export default {
         }
     },
     created(){
-        axios.get("/api/Service/callback.mi/Showtime/LocationMovies.api?locationId=290&t=2020491025827205").then(res=>{
+        axios.get("/info/Service/callback.mi/Showtime/LocationMovies.api?locationId=290&t=2020491025827205").then(res=>{
             this.movieList = res.data.ms;
         })
     }
@@ -40,6 +40,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    *{
+        font-size: .17rem;
+    }
     i{
         font-style: normal;
     }
@@ -68,6 +71,7 @@ export default {
                     flex: 1;
                     .title{
                         font-size: .17rem;
+                        font-family: "微软雅黑";
                     }
                     .p1{
                         .dot{
@@ -76,6 +80,7 @@ export default {
                             color: #659d0e;
                         }
                         .Sectitle{
+                            font-size: .15rem;
                             color: #659d0e;
                         }
                     }
@@ -87,6 +92,7 @@ export default {
                             border-radius: 0.03rem;
                             border: 1px solid #659d0e;
                             margin-right: .03rem;
+                            font-size: .1rem;
                         }
                     }
                     .p3{
