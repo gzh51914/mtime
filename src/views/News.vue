@@ -46,3 +46,6 @@ export default {
         font-weight: bold;
     }
 </style>
+        <h1>News</h1>
+    </div>
+</template>

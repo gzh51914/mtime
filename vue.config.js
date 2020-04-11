@@ -23,7 +23,14 @@ module.exports = {
       "/discovery": {
         target: "https://ticket-api-m.mtime.cn",
         changeOrigin: true
-      }
+      },
+      "/theater": {
+        target: "https://ticket-m.mtime.cn",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/theater": ""
+        }
+      },
     }
   },
   lintOnSave: true, //直接关闭eslint检查

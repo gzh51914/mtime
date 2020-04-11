@@ -1,20 +1,24 @@
 <template>
   <div id="app">
-    <Tabbar></Tabbar>
+    <Tabbar v-show="isTabbarShow"></Tabbar>
     <router-view/>
-    <Footer></Footer>
+    <Footer v-show="isFooterShow"></Footer>
   </div>
 </template>
 
 <script>
 import Tabbar from './components/Tabbar'
 import Footer from './components/Footer'
-
+import {mapState} from "vuex"
 export default {
   components: {
     Tabbar,
-    Footer
-  }
+    Footer,
+  },
+  computed:{
+    ...mapState("tabbar",["isTabbarShow"]),
+    ...mapState("footer",["isFooterShow"]),
+  },
 }
 </script>
 
@@ -22,7 +26,7 @@ export default {
 * {
     margin: 0;
     padding: 0;
-    // font-size: .15rem;
+    font-size: .15rem;
 }
 
 </style>

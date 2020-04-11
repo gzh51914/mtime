@@ -19,3 +19,5 @@ export default {
         font-size: .15rem;
     }
 </style>
+    </div>
+</template>

@@ -74,11 +74,28 @@ const routes = [
   {
     path: '',
     redirect: '/home'
-  }
+  },
+  {
+    path: '/theater',
+    component: ()=> import('@/views/Theater')
+  },
+  {
+    path: '/news',
+    component: ()=> import('@/views/News')
+  },
+  {
+    path: '/member',
+    component: ()=> import('@/views/Member')
+  },
+  {
+    path: '/citylist',
+    component: ()=> import('@/views/Citylist')
+  },
 ]
 
 const router = new VueRouter({
   // mode: 'history',
+  // 改为hash模式预防单页面刷新白屏报错 Uncaught SyntaxError: Unexpected token < 
   base: process.env.BASE_URL,
   routes
 })
