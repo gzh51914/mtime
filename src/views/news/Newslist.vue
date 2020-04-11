@@ -9,6 +9,7 @@
             v-for="news in newsList"
             :key="news.id"
             :class="news.type===1?'stylesecond':'styleone'"
+            @click="toDetail(news.id)"
             >
                 <h3>{{news.title}}</h3>
                 <img class="single" v-if="!news.images.length" :src="news.image" alt="">
@@ -60,9 +61,13 @@ export default {
                 url: `/info/Service/callback.mi/News/NewsList.api?t=20204101718281039&pageIndex=${this.pageIndex}`
             }).then(res => {
                 this.newsList.push(...res.data.newsList)
+                
             }).catch(err => {
                 console.log(err)
             })
+        },
+        toDetail:function(id){
+            this.$router.push(`/newsdetail/${id}`)
         }
     }
 }

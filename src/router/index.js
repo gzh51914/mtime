@@ -3,15 +3,13 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home'
 import ArticleDetail from '@/views/ArticleDetail'
 import News from '@/views/News'
+import NewsDetail from '@/views/NewsDetail'
 import Newslist from '@/views/news/Newslist'
 import Review from '@/views/news/Review'
 import Toplist from '@/views/news/Toplist'
 import Trailer from '@/views/news/Trailer'
 
 Vue.use(VueRouter)
-
-
-
 
 const routes = [
   {
@@ -65,6 +63,12 @@ const routes = [
     name: 'articledetail',
     path: '/articledetail/:id',
     component: ArticleDetail,
+    props: true
+  },
+  {
+    name: 'newsdetail',
+    path: '/newsdetail/:id',
+    component: NewsDetail,
     props: true
   },
   {

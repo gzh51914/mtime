@@ -39,7 +39,6 @@ export default {
             this.reviewInfo = res.data.review
         })
         axios.get('/info//Service/callback.mi/MobileMovie/Review.api?needTop=false&t=20204102124561143').then(res => {
-            console.log(res.data)
             this.commentCount = res.data
         })
     }
