@@ -177,11 +177,14 @@ export default {
         }
         dl {
           height: 100px;
+          width: 100%;
           display: block;
           color: #fff;
           margin-left: 0.18rem;
+          position: relative;
           dt {
             margin: 0.07rem 0 0;
+            height: .4rem;
             .i_grade {
               display: inline-block;
               vertical-align: middle;
@@ -196,19 +199,28 @@ export default {
                 no-repeat 0 0;
               background-size: auto 0.18rem;
               font-style: normal;
+              position: absolute;
+              height: .4rem;
+              top: .1rem;
             }
             > b {
               font-size: 0.18rem;
               display: inline-block;
               vertical-align: middle;
               font-weight: normal;
+              position: absolute;
+              height: .4rem;
+              margin-left: .4rem;
             }
           }
           dd {
             padding-top: 0.02rem;
             display: block;
+            height: .4rem;
             > b {
               font-size: 0.14rem;
+              position: absolute;
+              margin-top: -.1rem;
             }
           }
         }

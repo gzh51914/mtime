@@ -33,12 +33,16 @@
 
 <script>
 import axios from 'axios'
+import {mapState} from "vuex"
 export default {
     created(){
-        axios.get('/info/Service/callback.mi/Movie/MovieComingNew.api?locationId=290&t=202041010111151599').then(res=>{
+        axios.get(`/info/Service/callback.mi/Movie/MovieComingNew.api?locationId=${this.cityId}&t=202041010111151599`).then(res=>{
             // console.log(res.data.attention);
             this.movieList = res.data.attention;
         })
+    },
+    computed: {
+        ...mapState("city", ["cityName","cityId"]),
     },
     data(){
         return {

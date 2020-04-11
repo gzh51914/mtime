@@ -109,7 +109,6 @@ export default {
                 display: flex;
                 li{
                     height: 40px;
-                    
                     em{
                         font-weight: 400;
                         font-size: 15px;
@@ -117,6 +116,8 @@ export default {
                         display: inline-block;
                         vertical-align: middle;
                         line-height: 40px;
+                        position: absolute;
+                        width: .3rem;
                     }
                     i{
                         line-height: 40px;
@@ -125,12 +126,15 @@ export default {
                         width: 10px;
                         height: 6px;
                         margin: 2px 0 0 5px;
+                        position: absolute;
+                        top: .15rem;
+                        left: 0.3rem;
                         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAeCAYAAABqpJ3BAAAAAXNSR0IArs4c6QAAAWVJREFUWAntmDFugzAUhoEhOQAH4DwwJQszx+hWdQo3YM3Mkg3Ow9aFA7RT35+SKHEwPNsPjKpaMsHPvOfvQ0KKHdZ1vev7/iMIgoI62jmO4/c8z79/h9u46jjDqqpOhPimYLZJkhyzLPtS4l6GTdPsu6670OKpAlBGFCiUIIYpEpA4MrdqaAIeHAUEdM27xAz8lRsCZ50Bxb1JcODBHuGDpZt2SxJM+BbsIcC5CWt82KYsV4GtSJjCg/su4FvCBv5FwJeELfyowNoSLvBagbUkXOEnBZaWkICfFVhKQgqeJSAtIQnPFpCSkIY3EnCVWALeWMBWYil4KwFTCTyv2Yxg6tasN1BPfyVu1Ti/3Lc61FJ3Uo9LWMOjiLUAkpkSeFTXnOBR1EkABRwknOFFBCwlRODFBAwlxOBFBZgSovDiAjMS4vBYb+pYBfPGDYdhtNk+UGJJ/XPoJWJbOSgzlvpP+Mtv4AfFZn0enf+H0QAAAABJRU5ErkJggg==) 0 0 no-repeat transparent;
                         background-size: cover;
                     }
                     input{
                         display: block;
-                        margin-top: 2px;
+                        margin-top: 3px;
                         font-size: 16px;
                         width: 160px;
                         height: 28px;
@@ -142,6 +146,7 @@ export default {
                         background-size: 20px 20px;
                         z-index: 0;
                         outline: none;
+                        margin-left: .3rem;
                     }
                     p{
                         width: 22px;
@@ -168,6 +173,8 @@ export default {
                     }
                     &:nth-child(1){
                         margin-right: 42px;
+                        position: relative;
+                        width: auto;
                     }
                     &:nth-child(2){
                         position: relative;

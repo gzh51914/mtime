@@ -67,7 +67,7 @@ export default {
         })
       } else {
         instance2
-          .post('/api/login', {
+          .post('/login', {
             username: this.username,
             password: this.password
           })

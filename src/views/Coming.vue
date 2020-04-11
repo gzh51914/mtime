@@ -12,15 +12,23 @@ import MovieTab from '@/components/MovieTab'
 import MovieSearch from '@/components/MovieSearch'
 import MoseMovie from '@/components/MoseMovie'
 import ComingMovie from '@/components/ComingMovie'
-import Footer from '@/components/Footer'
+import { mapMutations } from "vuex"
 export default {
     components: {
         MovieTab,
         MovieSearch,
         MoseMovie,
         ComingMovie,
-        Footer
-    }
+    },
+    methods: {
+        ...mapMutations("tabbar",["TabbarShow","TabbarHide"]),
+    },
+    mounted() {
+        this.TabbarHide()
+    },
+    destroyed() {
+        this.TabbarShow()
+    },
 }
 </script>
 <style lang="scss" scoped>

@@ -11,6 +11,8 @@ import MovieTab from '@/components/MovieTab'
 import MovieSearch from '@/components/MovieSearch'
 import MovieList from '@/components/MovieList'
 import Footer from '@/components/Footer'
+import { mapMutations } from 'vuex'
+
 export default {
     components: {
         MovieTab,
@@ -18,8 +20,14 @@ export default {
         MovieList,
         Footer,
     },
-    created () {
-        // console.log(this.$route);
+    methods: {
+        ...mapMutations('tabbar',['TabbarShow','TabbarHide']),
+    },
+    mounted () {
+        this.TabbarHide()
+    },
+    destroyed () {
+        this.TabbarShow()
     }
 }
 </script>

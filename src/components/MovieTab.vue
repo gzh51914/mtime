@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <a href="/home" class="btn_back iconfont icon-jt-left"></a>
+        <a @click="toHome" class="btn_back iconfont icon-jt-left"></a>
         <ul class="table">
             <router-link v-for='nav in navdata'
             :key='nav.id'
@@ -21,6 +21,12 @@ export default {
                 { id: 2, title: '即将上映', path: '/home/coming' },
             ]
         }
+    },
+    methods: {
+        toHome:function () {
+            this.$router.push('/home')
+            // this.$router.back()
+        }
     }
 }
 </script>
@@ -40,11 +46,11 @@ export default {
         .btn_back{
             position: absolute;
             z-index: 2;
-            left: 0;
-            top: 0;
-            width: .51rem;
-            height: .51rem;
-            font-size: .51rem;
+            left: .1rem;
+            top: .1rem;
+            width: .31rem;
+            height: .31rem;
+            font-size: .31rem;
             color: #A6AAB0;
             overflow: hidden;
             text-decoration: none;

@@ -1,6 +1,6 @@
 <template>
     <div class="search">
-        <div class="cityShow"><b>北京</b><i class="iconfont icon-xiajiantou"></i></div>
+        <div class="cityShow" @click="handleChangepage"><b>{{cityName}}</b><i class="iconfont icon-xiajiantou"></i></div>
         <div class="searchInp">
             <i class="iconfont icon-sousuo"></i>
             <span>影片/影院/影人，任你搜</span>
@@ -9,8 +9,16 @@
 </template>
 
 <script>
+import {mapState} from "vuex"
 export default {
-
+    computed: {
+        ...mapState("city", ["cityName","cityId"]),
+    },
+    methods: {
+        handleChangepage(){
+            this.$router.push('/citylist')
+        },
+    },
 }
 </script>
 

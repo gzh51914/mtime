@@ -27,6 +27,7 @@
 <script>
 import axios from 'axios'
 import MovieSearch from '@/components/MovieSearch'
+import {mapState} from "vuex"
 
 export default {
     components: {
@@ -39,10 +40,10 @@ export default {
         }
     },
     created(){
-        axios.get("/info/Service/callback.mi/Showtime/LocationMovies.api?locationId=290&t=2020491025827205").then(res=>{
+        axios.get(`/info/Service/callback.mi/Showtime/LocationMovies.api?locationId=${this.cityId}&t=2020491025827205`).then(res=>{
             this.movieList = res.data.ms;
         })
-        axios.get("/info/Service/callback.mi/Movie/MovieComingNew.api?locationId=290&t=202041010111151599").then(res=>{
+        axios.get(`/info/Service/callback.mi/Movie/MovieComingNew.api?locationId=${this.cityId}&t=202041010111151599`).then(res=>{
             this.comingmovie = res.data.moviecomings;
         })
     },
@@ -53,7 +54,10 @@ export default {
         toComing:function () {
             this.$router.push('/home/coming')
         }
-    }
+    },
+    computed: {
+        ...mapState("city", ["cityName","cityId"]),
+    },
 }
 </script>
 
@@ -91,10 +95,13 @@ export default {
                 }
             }
             ul{
-
+                width: 3.3rem;
+                height: 3.2rem;
+                overflow-x: hidden;
                 li{
                     list-style-type: none;
                     float: left;
+                    height: 1.61rem;
                     .moviepic{
                         width: .76rem;
                         height: 1.13rem;
@@ -106,8 +113,8 @@ export default {
                     }
                     p{
                         width: .82rem;
+                        height: auto;
                         text-align: center;
-    
                         span{
                             font-size: .16rem;
                             color: #333;

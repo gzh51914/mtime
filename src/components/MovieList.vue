@@ -20,6 +20,7 @@
 
 <script>
 import axios from 'axios'
+import {mapState} from "vuex"
 export default {
     data () {
         return {
@@ -32,10 +33,13 @@ export default {
         }
     },
     created(){
-        axios.get("/info/Service/callback.mi/Showtime/LocationMovies.api?locationId=290&t=2020491025827205").then(res=>{
+        axios.get(`/info/Service/callback.mi/Showtime/LocationMovies.api?locationId=${this.cityId}&t=2020491025827205`).then(res=>{
             this.movieList = res.data.ms;
         })
-    }
+    },
+    computed: {
+        ...mapState("city", ["cityName","cityId"]),
+    },
 }
 </script>
 
