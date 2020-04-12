@@ -46,7 +46,7 @@ export default {
         .btn_back{
             position: absolute;
             z-index: 2;
-            left: .1rem;
+            left: 0rem;
             top: .1rem;
             width: .31rem;
             height: .31rem;
