@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Tabbar v-show="isTabbarShow"></Tabbar>
+    <Tabbar></Tabbar>
     <router-view/>
-    <Footer class="footer" v-show="isFooterShow"></Footer>
+    <Footer></Footer>
   </div>
 </template>
 
