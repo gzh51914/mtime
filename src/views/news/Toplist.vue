@@ -50,7 +50,7 @@ export default {
     },
     created () {
         this.topList = JSON.parse(localStorage.getItem('newsinfo')).topList
-        axios.get('/info/Service/callback.mi/TopList/TopListOfAll.api?t=20204101832964920&pageIndex=1').then(res => {
+        axios.get('/Service/callback.mi/TopList/TopListOfAll.api?t=20204101832964920&pageIndex=1').then(res => {
             this.topLists = res.data.topLists
         })
     },

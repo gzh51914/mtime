@@ -39,7 +39,7 @@ import axios from 'axios'
 import {mapState} from "vuex"
 export default {
     created(){
-        axios.get(`/info/Service/callback.mi/Movie/MovieComingNew.api?locationId=${this.cityId}&t=202041010111151599`).then(res=>{
+        axios.get(`/Service/callback.mi/Movie/MovieComingNew.api?locationId=${this.cityId}&t=202041010111151599`).then(res=>{
             // console.log(res.data.moviecomings);
             //把电影数据赋值给 movieList
             this.movieList = res.data.moviecomings;

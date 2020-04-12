@@ -26,7 +26,7 @@ export default {
   },
   created () {
     this.id = this.$route.params.id;
-    axios.get(`/info/Service/callback.mi/movie/Detail.api?movieId=${this.id}`).then(res=>{
+    axios.get(`/Service/callback.mi/movie/Detail.api?movieId=${this.id}`).then(res=>{
         this.movieimg = res.data.image;
     })
   },
@@ -34,7 +34,12 @@ export default {
       ...mapMutations("tabbar",["TabbarShow","TabbarHide"]),
   },
   mounted() {
-      this.TabbarHide()
+      this.TabbarHide();
+      this.$nextTick().then(()=>{     
+          let str1 = document.querySelector('.movie');
+          let str2 = document.querySelector('Footer');
+          str1.style.minHeight = (document.documentElement.clientHeight - str2.offsetHeight) + 'px';
+      })
   },
   destroyed() {
       this.TabbarShow()

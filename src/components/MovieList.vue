@@ -20,7 +20,7 @@
 
 <script>
 import axios from 'axios'
-import {mapState} from "vuex"
+import {mapState, mapMutations} from "vuex"
 export default {
     data () {
         return {
@@ -30,16 +30,23 @@ export default {
     methods:{
         toDetail(id){
             this.$router.push(`/movie/${id}`)
-        }
+        },
+        ...mapMutations('tabbar',['TabbarShow','TabbarHide'])
     },
     created(){
-        axios.get(`/info/Service/callback.mi/Showtime/LocationMovies.api?locationId=${this.cityId}&t=2020491025827205`).then(res=>{
+        axios.get(`/Service/callback.mi/Showtime/LocationMovies.api?locationId=${this.cityId}&t=2020491025827205`).then(res=>{
             this.movieList = res.data.ms;
         })
     },
     computed: {
         ...mapState("city", ["cityName","cityId"]),
     },
+    mounted () {
+        this.TabbarHide()
+    },
+    destroyed () {
+        this.TabbarShow()
+    }
 }
 </script>
 

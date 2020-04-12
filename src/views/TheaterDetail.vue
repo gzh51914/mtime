@@ -77,7 +77,8 @@ import "@/stylesheets/common.scss"
 import Vue from "vue"
 import Swiper from "swiper"
 import cSwiper from "@/components/Swiper"
-import { Tab, Tabs } from 'vant';
+import { Tab, Tabs } from 'vant'
+import axios from 'axios'
 
 Vue.use(Tab);
 Vue.use(Tabs);
@@ -114,7 +115,7 @@ export default {
     },
     created() {
         // console.log(this.$route.params.id);
-        instanceTDetail.get('/cinema/showtime.api?t=20204119394183946&cinemaId='+this.$route.params.id).then(res=>{
+        axios.get('/cinema/showtime.api?t=20204119394183946&cinemaId='+this.$route.params.id).then(res=>{
             // console.log(res.data.data);
             this.filmname=res.data.data.cinema.name
             this.moviesList=res.data.data.movies

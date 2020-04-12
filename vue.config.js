@@ -6,12 +6,9 @@ module.exports = {
       errors: false
     },
     proxy: {
-      '/info': {
+      '/Service': {
         target: 'https://m.mtime.cn',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/info': ''
-        }
+        changeOrigin: true
       },
       '/article': {
         target: 'https://content-api-m.mtime.cn',
@@ -29,22 +26,12 @@ module.exports = {
         target: "https://ticket-api-m.mtime.cn",
         changeOrigin: true
       },
-      "/theater": {
-        target: "https://ticket-m.mtime.cn",
-        changeOrigin: true,
-        pathRewrite: {
-          "^/theater": ""
-        }
-      },
-      "/toDetail": {
-        target: "https://ticket-api-m.mtime.cn",
-        changeOrigin: true,
-        pathRewrite: {
-          "^/toDetail": ""
-        }
-      },
       "/api": {
         target: "https://ticket-m.mtime.cn",
+        changeOrigin: true
+      },
+      "/cinema": {
+        target: "https://ticket-api-m.mtime.cn",
         changeOrigin: true
       },
       '/req': {
@@ -53,14 +40,7 @@ module.exports = {
         pathRewrite: {
           '^/req': ''
         }
-      },
-      "/tDetail": { // 影院详情页的url
-        target: "https://ticket-api-m.mtime.cn",
-        changeOrigin: true,
-        pathRewrite: {
-          "^/tDetail": ""
-        }
-      },
+      }
     }
   },
   lintOnSave: true, // 直接关闭eslint检查

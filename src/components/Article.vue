@@ -89,10 +89,15 @@ export default {
                     height: .92rem;
                     margin-right: .12rem;
                     position: relative;
+                    overflow: hidden;
                     img {
-                        width: 100%;
+                        width: auto;
                         height: 100%;
+                        text-align: center;
                         position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
                     }
                 }
                 div {
@@ -120,9 +125,10 @@ export default {
                     width: 3.40rem;
                     height: 1.66rem;
                     margin-right: .12rem;
+                    overflow: hidden;
                     img {
                         width: 100%;
-                        height: 100%;
+                        height: auto;
                     }
                 }
                 div {

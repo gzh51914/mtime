@@ -49,12 +49,12 @@ export default {
         }
     },
     created () {
-        axios.get('/info/Service/callback.mi/PageSubArea/GetRecommendationIndexInfo.api?t=20204101246412756').then(res => {
+        axios.get('/Service/callback.mi/PageSubArea/GetRecommendationIndexInfo.api?t=20204101246412756').then(res => {
             localStorage.setItem('newsinfo', JSON.stringify(res.data))
             this.imgUrl = res.data.news.imageUrl
             this.imgTitle = res.data.news.title
         })
-        axios.get('/info/Service/callback.mi/News/NewsList.api?t=20204101246448055&pageIndex=1').then(res => {
+        axios.get('/Service/callback.mi/News/NewsList.api?t=20204101246448055&pageIndex=1').then(res => {
             this.newsList = res.data.newsList
         })
     },
@@ -63,7 +63,7 @@ export default {
             this.pageIndex += 1
             axios({
                 method: 'get',
-                url: `/info/Service/callback.mi/News/NewsList.api?t=20204101718281039&pageIndex=${this.pageIndex}`
+                url: `/Service/callback.mi/News/NewsList.api?t=20204101718281039&pageIndex=${this.pageIndex}`
             }).then(res => {
                 this.newsList.push(...res.data.newsList)
                 

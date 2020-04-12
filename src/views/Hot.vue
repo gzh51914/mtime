@@ -4,9 +4,7 @@
             <MovieTab></MovieTab>
             <MovieSearch></MovieSearch>
         </header>
-        <main>
-           <MovieList></MovieList> 
-        </main>
+        <MovieList></MovieList> 
         
         <!-- <Footer></Footer> -->
     </div>
@@ -15,28 +13,32 @@
 import MovieTab from '@/components/MovieTab'
 import MovieSearch from '@/components/MovieSearch'
 import MovieList from '@/components/MovieList'
-import Footer from '@/components/Footer'
+// import Footer from '@/components/Footer'
+import { mapMutations } from "vuex"
 export default {
     components: {
         MovieTab,
         MovieSearch,
         MovieList,
-        Footer,
+        // Footer,
+    },
+    methods: {
+        ...mapMutations("tabbar",["TabbarShow","TabbarHide"]),
     },
     mounted(){
-        let str1 = document.querySelector('main');
-        let str2 = document.querySelector('Footer');
-        let str3 = document.querySelector('header');
-        
-        if(str2.offsetTop < document.documentElement.clientHeight - str2.offsetHeight){
-            str1.style.height =  (document.documentElement.clientHeight - str2.offsetHeight - str3.offsetHeight) +'px'
-        }
-        
-    }
+        this.TabbarHide()
+        this.$nextTick().then(()=>{
+            let str1 = document.querySelector('.hot');
+            let str2 = document.querySelector('Footer');
+            str1.style.minHeight = (document.documentElement.clientHeight - str2.offsetHeight) + 'px';
+        })
+    },
+    destroyed() {
+        this.TabbarShow()
+    },
     
 }
 </script>
 
 <style lang="scss" scoped>
-
 </style>

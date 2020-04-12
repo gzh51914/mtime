@@ -47,6 +47,7 @@ import "@/stylesheets/common.scss"
 import topButton from "@/components/Topbutton"
 import { DropdownMenu, DropdownItem,TreeSelect } from 'vant';
 import Loading from '@/components/Loading'
+import axios from 'axios'
 
 Vue.component('Loading',Loading)
 Vue.use(DropdownMenu);
@@ -67,7 +68,7 @@ export default {
         }
     },
     created() {
-        instanceTheater.get(`/api/proxy/ticket/onlineCinemasByCity.api?locationId=${this.cityId}&_=1586499843760`).then(res=>{
+        axios.get(`/api/proxy/ticket/onlineCinemasByCity.api?locationId=${this.cityId}&_=1586499843760`).then(res=>{
             // console.log(res.data.data);
             this.noticeNotOwn = res.data.data.noticeNotOwn
             this.cinemaList = res.data.data.cinemaList

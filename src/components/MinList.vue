@@ -40,10 +40,10 @@ export default {
         }
     },
     created(){
-        axios.get(`/info/Service/callback.mi/Showtime/LocationMovies.api?locationId=${this.cityId}&t=2020491025827205`).then(res=>{
+        axios.get(`/Service/callback.mi/Showtime/LocationMovies.api?locationId=${this.cityId}&t=2020491025827205`).then(res=>{
             this.movieList = res.data.ms;
         })
-        axios.get(`/info/Service/callback.mi/Movie/MovieComingNew.api?locationId=${this.cityId}&t=202041010111151599`).then(res=>{
+        axios.get(`/Service/callback.mi/Movie/MovieComingNew.api?locationId=${this.cityId}&t=202041010111151599`).then(res=>{
             this.comingmovie = res.data.moviecomings;
         })
     },

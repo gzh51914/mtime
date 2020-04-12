@@ -51,7 +51,7 @@ export default {
         }
     },
     created(){
-        axios.get(`/info/Service/callback.mi/movie/Detail.api?movieId=${this.id}`).then(res=>{
+        axios.get(`/Service/callback.mi/movie/Detail.api?movieId=${this.id}`).then(res=>{
             this.movie = res.data;
             this.country = this.movie.release.location;
             

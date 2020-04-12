@@ -48,6 +48,7 @@ import Vue from 'vue'
 import {instance} from "@/utils/http"
 import { mapMutations } from "vuex"
 import topButton from "@/components/Topbutton"
+import axios from 'axios'
 
 import "@/stylesheets/common.scss"
 
@@ -65,7 +66,7 @@ export default {
         }
     },
     created () {
-        instance.get("/Service/callback.mi/Showtime/HotCitiesByCinema.api?t=202048225470270").then(res => {
+        axios.get("/Service/callback.mi/Showtime/HotCitiesByCinema.api?t=202048225470270").then(res => {
             // console.log((res.data.p).slice(0,9))
             this.searchList = res.data.p
             this.dataFilter(res.data.p)

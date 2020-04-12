@@ -27,12 +27,8 @@ export default {
     MinList
   },
   created () {
-    // console.log(this.$route.path);
     this.path = this.$route.path
-    // axios.get('/poster/get.ashx?uri=http%3A%2F%2Fimg5.mtime.cn%2Fmg%2F2018%2F07%2F31%2F143906.61810640.jpg&width=640&height=320&clipType=4').then(res => {
-    //     console.log(res);
-    //     this.posterUrl = res
-    // })
+    console.log(document.documentElement.clientHeight);
   },
   data () {
       return {

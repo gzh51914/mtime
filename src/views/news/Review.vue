@@ -42,7 +42,7 @@ export default {
     },
     created () {
         this.reviewInfo = JSON.parse(localStorage.getItem('newsinfo')).review
-        axios.get('/info//Service/callback.mi/MobileMovie/Review.api?needTop=false&t=20204102124561143').then(res => {
+        axios.get('/Service/callback.mi/MobileMovie/Review.api?needTop=false&t=20204102124561143').then(res => {
             this.commentCount = res.data
         })
     },
