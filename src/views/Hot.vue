@@ -1,8 +1,13 @@
 <template>
     <div class="hot">
-        <MovieTab></MovieTab>
-        <MovieSearch></MovieSearch>
-        <MovieList></MovieList>
+        <header>
+            <MovieTab></MovieTab>
+            <MovieSearch></MovieSearch>
+        </header>
+        <main>
+           <MovieList></MovieList> 
+        </main>
+        
         <Footer></Footer>
     </div>
 </template>
@@ -17,15 +22,21 @@ export default {
         MovieSearch,
         MovieList,
         Footer,
+    },
+    mounted(){
+        let str1 = document.querySelector('main');
+        let str2 = document.querySelector('Footer');
+        let str3 = document.querySelector('header');
+        
+        if(str2.offsetTop < document.documentElement.clientHeight - str2.offsetHeight){
+            str1.style.height =  (document.documentElement.clientHeight - str2.offsetHeight - str3.offsetHeight) +'px'
+        }
+        
     }
     
 }
 </script>
 
 <style lang="scss" scoped>
-    Footer{
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
+
 </style>
