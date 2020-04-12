@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <Loading v-if="isLoading" />
         <div v-if="firstInfo" class="first">
             <img :src="firstInfo.coverImg" alt="">
             <h2>{{firstInfo.movieName}}</h2>
@@ -20,6 +21,10 @@
 
 <script>
 import axios from 'axios'
+import Vue from 'vue'
+import Loading from '@/components/Loading'
+
+Vue.component('Loading',Loading)
 export default {
     created () {
         axios.get('/discovery/trailerList.api?t=202041017421571967&param=1').then(res => {
@@ -31,8 +36,14 @@ export default {
     data () {
         return {
             trailerList: [],
-            firstInfo: []
+            firstInfo: [],
+            isLoading: true
         }
+    },
+    mounted () {
+        setTimeout(()=>{
+            this.isLoading = false
+        },500)
     }
 }
 </script>

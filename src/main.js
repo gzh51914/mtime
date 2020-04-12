@@ -5,7 +5,11 @@ import store from './store'
 
 import '@/utils/rem'
 import '@/stylesheets/main.scss'
+import Loading from '@/components/Loading'
 Vue.config.productionTip = false
+
+Vue.component('Loading',Loading)
+
 
 new Vue({
   router,

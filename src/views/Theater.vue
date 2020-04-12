@@ -1,5 +1,6 @@
 <template>
   <div class="theater">
+      <Loading v-if="isLoading" />
       <div class="h_theater">
           <ul>
               <li>
@@ -45,7 +46,9 @@ import {mapState,mapActions,mapMutations} from "vuex"
 import "@/stylesheets/common.scss"
 import topButton from "@/components/Topbutton"
 import { DropdownMenu, DropdownItem,TreeSelect } from 'vant';
+import Loading from '@/components/Loading'
 
+Vue.component('Loading',Loading)
 Vue.use(DropdownMenu);
 Vue.use(DropdownItem);
 Vue.use(TreeSelect);
@@ -60,6 +63,7 @@ export default {
             noticeNotOwn:"",
             cinemaList:[],
             isTreeShow:false,
+            isLoading: true
         }
     },
     created() {
@@ -95,6 +99,11 @@ export default {
             )
         }
     },
+    mounted () {
+      setTimeout(()=>{
+          this.isLoading = false
+      },500)
+    }
 }
 </script>
 

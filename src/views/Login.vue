@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+  <Loading v-if="isLoading"/>
     <!-- 登录 -->
     <div class="login" v-show="isShow">
       <div class="title">账号密码登录</div>
@@ -87,8 +88,9 @@ export default {
     return {
       username: "",
       password: "",
-      isShow: true
-    };
+      isShow: true,
+      isLoading: true
+    }
   },
   methods: {
     asyncValidator(val) {
@@ -160,6 +162,12 @@ export default {
           });
       }
     }
+  },
+  mounted () {
+    // loading
+    setTimeout(()=>{
+    this.isLoading = false
+    },1000)
   }
 };
 </script>

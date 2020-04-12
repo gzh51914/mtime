@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Tabbar></Tabbar>
+    <Tabbar v-show="isTabbarShow"></Tabbar>
     <router-view/>
-    <Footer></Footer>
+    <Footer v-show="isFooterShow"></Footer>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import {mapState} from "vuex"
 export default {
   components: {
     Tabbar,
-    Footer,
+    Footer
   },
   computed:{
     ...mapState("tabbar",["isTabbarShow"]),

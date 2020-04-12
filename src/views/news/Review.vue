@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <Loading v-if="isLoading" />
         <div class="top" v-if="reviewInfo">
             <div class="img">
                 <img :src="reviewInfo.posterUrl" alt="">
@@ -27,11 +28,16 @@
 
 <script>
 import axios from 'axios'
+import Vue from 'vue'
+import Loading from '@/components/Loading'
+
+Vue.component('Loading',Loading)
 export default {
     data () {
         return {
             reviewInfo: null,
-            commentCount: null
+            commentCount: null,
+            isLoading: true
         }
     },
     created () {
@@ -39,6 +45,11 @@ export default {
         axios.get('/info//Service/callback.mi/MobileMovie/Review.api?needTop=false&t=20204102124561143').then(res => {
             this.commentCount = res.data
         })
+    },
+    mounted () {
+        setTimeout(()=>{
+            this.isLoading = false
+        },500)
     }
 }
 </script>

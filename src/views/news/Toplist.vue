@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <Loading v-if="isLoading" />
         <div v-if="topList" class="first">
             <img :src="topList.imageUrl" alt="">
             <h2>{{topList.title}}</h2>
@@ -34,12 +35,17 @@
 
 <script>
 import axios from 'axios'
+import Vue from 'vue'
+import Loading from '@/components/Loading'
+
+Vue.component('Loading',Loading)
 export default {
     data () {
         return {
             topList: null,
             topLists: [],
-            pageIndex:1
+            pageIndex:1,
+            isLoading: true
         }
     },
     created () {
@@ -55,6 +61,11 @@ export default {
                 this.topLists.push(...res.data.topLists)
             })
         }
+    },
+    mounted () {
+        setTimeout(()=>{
+            this.isLoading = false
+        },500)
     }
 }
 </script>

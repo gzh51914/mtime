@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Loading v-if="isLoading" />
         <router-view/>
         <MovieSearch v-show="this.path==='/home'"></MovieSearch>
         <MinList v-show="this.path==='/home'"></MinList>
@@ -14,6 +15,10 @@
 import Article from '@/components/Article'
 import MovieSearch from '@/components/MovieSearch'
 import MinList from '@/components/MinList'
+import Vue from 'vue'
+import Loading from '@/components/Loading'
+
+Vue.component('Loading',Loading)
 
 export default {
   components: {
@@ -31,9 +36,15 @@ export default {
   },
   data () {
       return {
-          path: null
+          path: null,
+          isLoading: true
       }
-  }
+  },
+  mounted () {
+        setTimeout(()=>{
+            this.isLoading = false
+        },500)
+    }
 }
 </script>
 

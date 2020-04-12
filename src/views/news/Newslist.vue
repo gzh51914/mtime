@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <Loading v-if="isLoading" />
         <div class="img">
             <img :src="imgUrl" alt="">
             <h2>{{imgTitle}}</h2>
@@ -30,7 +31,9 @@
 import axios from 'axios'
 import Vue from 'vue'
 import moment from 'moment'
+import Loading from '@/components/Loading'
 
+Vue.component('Loading',Loading)
 Vue.filter('dataFilter',data => {
     return moment(data*1000).format('YYYY-MM-DD HH:mm')
 })
@@ -41,7 +44,8 @@ export default {
             imgUrl: null,
             imgTitle: null,
             newsList: [],
-            pageIndex: 1
+            pageIndex: 1,
+            isLoading: true
         }
     },
     created () {
@@ -70,6 +74,11 @@ export default {
         toDetail:function(id){
             this.$router.push(`/newsdetail/${id}`)
         }
+    },
+    mounted () {
+        setTimeout(()=>{
+            this.isLoading = false
+        },500)
     }
 }
 </script>

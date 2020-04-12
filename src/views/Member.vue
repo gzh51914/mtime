@@ -1,5 +1,6 @@
 <template>
   <div class="member">
+    <Loading v-if="isLoading" />
     <section class="m-container">
       <!-- header -->
       <article class="user-msg">
@@ -67,6 +68,9 @@
 <script>
 import Vue from 'vue'
 import { Icon, Button, Dialog } from 'vant'
+import Loading from '@/components/Loading'
+
+Vue.component('Loading',Loading)
 Vue.use(Icon)
 Vue.use(Button)
 Vue.use(Dialog)
@@ -115,7 +119,8 @@ export default {
           name: '购买使用帮助',
           icon: { after: 'arrow' }
         }
-      ]
+      ],
+      isLoading: true
     }
   },
   methods: {
@@ -134,6 +139,11 @@ export default {
           console.log('out ...')
         })
     }
+  },
+  mounted () {
+      setTimeout(()=>{
+          this.isLoading = false
+      },500)
   }
 }
 </script>

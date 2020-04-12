@@ -1,7 +1,7 @@
 <template>
   <section class="theater_detail">
       <div class="td_header">
-          <i @click="handleChangepage('/movie/'+movieInfoRegion.movieId)"></i>
+          <i @click="handleChangepage('/theater')"></i>
           <em></em>
       </div>
       <div class="filmtitle">
@@ -37,7 +37,7 @@
                 </div>
             </cSwiper>
           </div>
-          <div class="select_movie" @click="handleChangepage('/')">
+          <div class="select_movie" @click="handleChangepage('/movie/'+movieInfoRegion.movieId)">
            <h3>{{movieInfoRegion.title}}</h3>
            <p>{{movieInfoRegion.length}} - {{movieInfoRegion.type}}</p>
            <i></i>
