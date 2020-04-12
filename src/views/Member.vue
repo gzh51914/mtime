@@ -187,14 +187,14 @@ export default {
         }
         dl {
           height: 100px;
-          width: 100%;
+          width: 70%;
           display: block;
           color: #fff;
           margin-left: 0.18rem;
           position: relative;
           dt {
             margin: 0.07rem 0 0;
-            height: .4rem;
+            height: 0.4rem;
             .i_grade {
               display: inline-block;
               vertical-align: middle;
@@ -210,8 +210,8 @@ export default {
               background-size: auto 0.18rem;
               font-style: normal;
               position: absolute;
-              height: .4rem;
-              top: .1rem;
+              height: 0.4rem;
+              top: 0.1rem;
             }
             > b {
               font-size: 0.18rem;
@@ -219,18 +219,18 @@ export default {
               vertical-align: middle;
               font-weight: normal;
               position: absolute;
-              height: .4rem;
-              margin-left: .4rem;
+              height: 0.4rem;
+              margin-left: 0.4rem;
             }
           }
           dd {
             padding-top: 0.02rem;
             display: block;
-            height: .4rem;
+            height: 0.4rem;
             > b {
               font-size: 0.14rem;
               position: absolute;
-              margin-top: -.1rem;
+              margin-top: -0.1rem;
             }
           }
         }
@@ -238,7 +238,6 @@ export default {
     }
     .my_shoptool {
       width: 100%;
-      // height: 400px;
       padding: 0 0.2rem 0;
       // background: yellowgreen;
       position: relative;
@@ -251,8 +250,11 @@ export default {
           flex: 1;
           text-align: center;
           a {
-            display: block;
+            display: flex;
             padding: 0.18rem 0 0.14rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .i_cat {
               background: #ffb059
                 url(//static1.mtime.cn/html5/20200116143308/images/2014/i_cate.png)
@@ -330,8 +332,9 @@ export default {
       }
     }
     .login-out {
+      display: flex;
       padding: 20px 0;
     }
-    }
+  }
 }
 </style>
